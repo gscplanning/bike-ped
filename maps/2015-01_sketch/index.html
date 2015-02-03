@@ -1,12 +1,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <title>jQuery UI Tabs - Default functionality</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <title>Bike/Ped 2015 - Sketches from January Meeting</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
   <script>
@@ -15,32 +14,78 @@
   });
   </script>
   <style>
-    body {
-      margin:0;
-      padding:0;
-      height: 100%;
-      width: 100%
-      background-color: black;
-    }
-    #container {
-      width:100%;
-    }
-    .map {
-      margin-left: auto;
-      margin-right: auto;
-      position:block;
-      top:100%;
-      bottom:0;
-      width:88%;
-      height:100%;
-      background-color: black;}
-    #tabs {
-      width: 100%;
-    }
-</style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+        margin:0;
+        padding:0;
+        height: 100%;
+        max-height: 800px;
+        background-image: url(binding_dark.png);
+        color: white;
+      }
+      #container {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+
+      #top-bar{
+        padding-top:0.5px;
+        padding-bottom: 0.5px;
+        padding-left: 2.5px;
+        padding-right: 2.5px;
+        margin-top: auto;
+        margin-bottom: auto;
+        display: block;
+        background-color: #27ae60;
+        height:200px;
+        position: relative;
+      }
+
+      .inline {
+        display: inline-block;
+        vertical-align: middle;
+        width: 45%;
+        padding: 0 2%;
+      }
+
+      #title {
+        text-align: left;
+      }
+      #logo-container{    
+      }
+      #logo {
+        height: 90%;
+        float: right;
+      }
+
+      #tabs {
+          margin-top: 0;
+          max-width: 800px;
+          border-radius: 0;
+          font-family: 'Open Sans', sans-serif;
+      }
+
+      .map {
+        max-width:800px;
+        height: 100%;
+        max-height: 800px
+      }
+
+  </style>
 </head>
 <body>
 <div id="container"> 
+  <div id="top-bar">
+    <div id="title" class="inline">
+      <h1>Bike/Ped Sketch Maps</h1>
+      <h2>from 12/14 &amp; 1/15 meetings</h2>
+    </div>
+    <div class="inline" id="logo-container">
+      <img src="logo_med.png" id="logo">
+    </div>
+  </div>
   <div id="tabs">
     <ul>
       <li><a href="#urban">Urban</a></li>
@@ -57,19 +102,19 @@
     var urban = L.mapbox.map('urban', 'gscplanning.urban_base')
       .setView([38.21,-84.56],13);
     
-    L.control.layers({
-      'Bike': L.mapbox.tileLayer('gscplanning.2015-01_urban_bike'),
-      'Pedestrian': L.mapbox.tileLayer('gscplanning.2015-01_urban_ped')
-    }).addTo(urban);
+    // L.control.layers({
+    //   'Bike': L.mapbox.tileLayer('gscplanning.2015-01_urban_bike'),
+    //   'Pedestrian': L.mapbox.tileLayer('gscplanning.2015-01_urban_ped')
+    // }).addTo(urban);
     
     // rural
     var rural = L.mapbox.map('rural', 'gscplanning.rural_base')
       .setView([38.30,-84.55952],11);
     
-    L.control.layers({
-      'Bike': L.mapbox.tileLayer('gscplanning.2015-01_rural_bike'),
-      'Pedestrian': L.mapbox.tileLayer('gscplanning.2015-01_rural_ped')
-    }).addTo(rural);
+    // L.control.layers({
+    //   'Bike': L.mapbox.tileLayer('gscplanning.2015-01_rural_bike'),
+    //   'Pedestrian': L.mapbox.tileLayer('gscplanning.2015-01_rural_ped')
+    // }).addTo(rural);
     
   </script>
  
