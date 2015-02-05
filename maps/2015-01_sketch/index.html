@@ -102,19 +102,19 @@
     var urban = L.mapbox.map('urban', 'gscplanning.urban_base')
       .setView([38.21,-84.56],13);
     
-    // L.control.layers({
-    //   'Bike': L.mapbox.tileLayer('gscplanning.2015-01_urban_bike'),
-    //   'Pedestrian': L.mapbox.tileLayer('gscplanning.2015-01_urban_ped')
-    // }).addTo(urban);
+    L.control.layers({
+      'Bike': L.mapbox.tileLayer('gscplanning.2015-01_urban_bike'),
+      'Pedestrian': L.mapbox.tileLayer('gscplanning.2015-01_urban_ped')
+    }).addTo(urban);
     
     // rural
     var rural = L.mapbox.map('rural', 'gscplanning.rural_base')
       .setView([38.30,-84.55952],11);
     
-    // L.control.layers({
-    //   'Bike': L.mapbox.tileLayer('gscplanning.2015-01_rural_bike'),
-    //   'Pedestrian': L.mapbox.tileLayer('gscplanning.2015-01_rural_ped')
-    // }).addTo(rural);
+    L.control.layers({
+      'Bike': L.mapbox.tileLayer('gscplanning.2015-01_rural_bike'),
+      'Pedestrian': L.mapbox.tileLayer('gscplanning.2015-01_rural_ped')
+    }).addTo(rural);
     
   </script>
  
