@@ -105,7 +105,7 @@
     L.control.layers({
       'Bike': L.mapbox.tileLayer('gscplanning.2015-01_urban_bike'),
       'Pedestrian': L.mapbox.tileLayer('gscplanning.2015-01_urban_ped')
-    }, collapsed: false;).addTo(urban);
+    }, collapsed: false).addTo(urban);
     
     // rural
     var rural = L.mapbox.map('rural', 'gscplanning.rural_base')
