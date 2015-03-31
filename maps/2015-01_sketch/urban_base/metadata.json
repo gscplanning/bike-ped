@@ -1,0 +1,11 @@
+{
+    "attribution": "", 
+    "description": "", 
+    "center": "-84.5728,38.2554,13", 
+    "bounds": "-84.6107,38.1657,-84.4936,38.2833", 
+    "minzoom": "13", 
+    "version": "1.0.0", 
+    "template": "", 
+    "maxzoom": "16", 
+    "name": "urban_base"
+}

@@ -3,11 +3,16 @@
   <meta charset="utf-8">
   <meta name='viewport' content='width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no' />
   <title>Bike/Ped 2015 - Sketches from January Meeting</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+ 
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
+
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+
   <script>
   $(function() {
     $( "#tabs" ).tabs();
@@ -99,9 +104,23 @@
     L.mapbox.accessToken = 'pk.eyJ1IjoiZ3NjcGxhbm5pbmciLCJhIjoiRVZMNXpsQSJ9.5OxUlJTCDplPkdkKNlB91A';
     
     // urban
-    var urban = L.mapbox.map('urban', 'gscplanning.urban_base')
-      .setView([38.21,-84.56],13);
+    // var urban = L.mapbox.map('urban', 'gscplanning.urban_base')
+    //   .setView([38.21,-84.56],13);
     
+    // var urban = './data/urban_base/{z}/{x}/{y}.png';
+    // var map = L.map('urban', {
+    //       maxZoom: 16
+    //   });
+
+    // L.tileLayer(urban).addTo(map);
+    // map.setView([38.21,-84.56],13);
+    var urban = L.map('urban').setView([38.21,-84.56],13);
+    L.tileLayer('urban_base/{z}/{x}/{y}.png', {
+      attribution: 'GSCPC'
+    }).addTo(urban);
+
+
+
     L.control.layers({
       'Bike': L.mapbox.tileLayer('gscplanning.2015-01_urban_bike'),
       'Pedestrian': L.mapbox.tileLayer('gscplanning.2015-01_urban_ped')
