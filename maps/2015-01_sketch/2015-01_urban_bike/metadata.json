@@ -1,0 +1,12 @@
+{
+    "attribution": "", 
+    "description": "", 
+    "center": "-84.5587,38.2189,13", 
+    "bounds": "-84.6081,38.1792,-84.5005,38.2806", 
+    "minzoom": "13", 
+    "version": "2.0.0", 
+    "template": "{{#__location__}}{{/__location__}}{{#__teaser__}}\"{{{text}}}\"{{/__teaser__}}{{#__full__}}{{/__full__}}", 
+    "maxzoom": "16", 
+    "legend": "", 
+    "name": "2015-01_urban_bike"
+}
