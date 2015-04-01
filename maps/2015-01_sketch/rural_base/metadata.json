@@ -1,0 +1,11 @@
+{
+    "attribution": "", 
+    "description": "", 
+    "center": "-84.5691,38.2708,11", 
+    "bounds": "-84.7987,38.0792,-84.3688,38.5457", 
+    "minzoom": "11", 
+    "version": "1.0.0", 
+    "template": "", 
+    "maxzoom": "13", 
+    "name": "rural_base"
+}

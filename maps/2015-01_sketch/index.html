@@ -104,19 +104,11 @@
     L.mapbox.accessToken = 'pk.eyJ1IjoiZ3NjcGxhbm5pbmciLCJhIjoiRVZMNXpsQSJ9.5OxUlJTCDplPkdkKNlB91A';
     
     // urban
-    // var urban = L.mapbox.map('urban', 'gscplanning.urban_base')
-    //   .setView([38.21,-84.56],13);
-    
-    // var urban = './data/urban_base/{z}/{x}/{y}.png';
-    // var map = L.map('urban', {
-    //       maxZoom: 16
-    //   });
-
-    // L.tileLayer(urban).addTo(map);
-    // map.setView([38.21,-84.56],13);
     var urban = L.map('urban').setView([38.21,-84.56],13);
     L.tileLayer('urban_base/{z}/{x}/{y}.png', {
-      attribution: 'GSCPC'
+      attribution: 'GSCPC',
+      maxZoom: 16,
+      minZoom: 13
     }).addTo(urban);
 
 
@@ -127,8 +119,14 @@
     }).addTo(urban);
     
     // rural
-    var rural = L.mapbox.map('rural', 'gscplanning.rural_base')
-      .setView([38.30,-84.55952],11);
+    // var rural = L.mapbox.map('rural', 'gscplanning.rural_base')
+    //   .setView([38.30,-84.55952],11);
+    var rural = L.map('rural').setView([38.30,-84.55952],11);
+    L.tileLayer('rural_base/{z}/{x}/{y}.png', {
+      attribution: 'GSCPC',
+      maxZoom: 13,
+      minZoom: 11
+    }).addTo(rural);
     
     L.control.layers({
       'Bike': L.mapbox.tileLayer('gscplanning.2015-01_rural_bike'),
