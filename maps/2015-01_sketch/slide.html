@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name='viewport' content='width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<title>Bike/Ped 2015 - Sketches from January Meeting</title>
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<link rel="stylesheet" href="style.css" />
+	<!-- JavaScript -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<script type="text/javascript" src="jquery.fullPage.js"></script>
+</head>
+<body>
+	<div id="fullpage">
+	    <div class="section"><h1>Some section</h1></div>
+	    <div class="section"><div id="map"></div></div>
+	    <div class="section"><div  id="urban"></div></div>
+	    <div class="section">Some section</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+    			$('#fullpage').fullpage();
+		});
+	</script>
+
+	<script type="text/javascript">
+		var map = L.map('map', {
+			scrollWheelZoom: false
+		}).setView([51.505, -0.09], 13);
+		L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		}).addTo(map);
+	</script>
+
+	<script type="text/javascript">
+		var urban = L.map('urban', {
+			scrollWheelZoom: false
+		}).setView([38.21,-84.56],13);
+		L.tileLayer('urban_base/{z}/{x}/{y}.png', {
+			attribution: 'GSCPC',
+			maxZoom: 16,
+			minZoom: 13
+		}).addTo(urban);
+
+
+
+		L.control.layers({
+			'Bike': L.tileLayer('2015-01_urban_bike/{z}/{x}/{y}.png'),
+			'Pedestrian': L.tileLayer('2015-01_urban_ped/{z}/{x}/{y}.png')
+		}).addTo(urban);
+	</script>
+</body>

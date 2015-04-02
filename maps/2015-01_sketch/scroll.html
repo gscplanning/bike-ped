@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name='viewport' content='width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<title>Bike/Ped 2015 - Sketches from January Meeting</title>
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="onepage-scroll.css" />
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<link rel="stylesheet" href="style.css" />
+	<!-- JavaScript -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<script type="text/javascript" src="jquery.onepage-scroll.js"></script>
+</head>
+<body>
+	<div class="main">
+		<!-- <section>
+			<div class="slide-container" id="main">
+				<div class="slide-content">
+					<h1>Bike-Ped 2015</h1>
+					<h2>Urban &amp; Rural Sketch Maps</h2>
+					<h3>12/14 &amp; 1/15</h3>
+					<img src="logo_med.png" id="logo"/>
+					<div id="advance-container">
+						<p><sup>Scroll</sup>  <span class="advance">&#8964;</span>  <sup>Down</sup></p>
+					</div>
+				</div>
+			</div>
+		</section> -->
+		<section class="home">
+			<div class="slide-container">
+				<h1>Bike/Ped Advisory Committee</h1>
+				<p>Urban &amp; Rural Sketch Maps</p>
+			</div>
+		</section>
+		<section><div id="urban"></div></section>
+		<section><div id="rural"></div></section>
+	</div>
+
+	<!-- call onepage -->
+	<script type="text/javascript">
+		$(".main").onepage_scroll();
+	</script>
+
+	<!-- Urban Map -->
+	<script type="text/javascript">
+		var urban = L.map('urban', {
+			scrollWheelZoom: false
+		}).setView([38.21,-84.56],14);
+		L.tileLayer('urban_base/{z}/{x}/{y}.png', {
+			attribution: 'GSCPC',
+			maxZoom: 16,
+			minZoom: 13
+		}).addTo(urban);
+
+
+
+		L.control.layers({
+			'Bike': L.tileLayer('2015-01_urban_bike/{z}/{x}/{y}.png'),
+			'Pedestrian': L.tileLayer('2015-01_urban_ped/{z}/{x}/{y}.png')
+		}).addTo(urban);
+	</script>
+
+	<!-- Rural Map -->
+	<script type="text/javascript">
+		var rural = L.map('rural', {
+			scrollWheelZoom: false
+		}).setView([38.317236, -84.564147], 12);
+		L.tileLayer('rural_base/{z}/{x}/{y}.png', {
+			attribution: 'GSCPC',
+			maxZoom: 13,
+			minZoom: 11
+		}).addTo(rural);
+
+		L.control.layers({
+			'Bike': L.tileLayer('2015-01_rural_bike/{z}/{x}/{y}.png'),
+			'Pedestrian': L.tileLayer('2015-01_rural_ped/{z}/{x}/{y}.png')
+		}).addTo(rural);
+	</script>
+</body>
