@@ -1,0 +1,12 @@
+{
+    "attribution": "", 
+    "description": "", 
+    "center": "-84.5377,38.2587,11", 
+    "bounds": "-84.7012,38.1167,-84.3709,38.4176", 
+    "minzoom": "11", 
+    "version": "2.0.0", 
+    "template": "{{#__location__}}{{/__location__}}{{#__teaser__}}\"{{{text}}}\"{{/__teaser__}}{{#__full__}}{{/__full__}}", 
+    "maxzoom": "13", 
+    "legend": "", 
+    "name": "2015-01_rural_ped"
+}

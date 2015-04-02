@@ -114,8 +114,8 @@
 
 
     L.control.layers({
-      'Bike': L.mapbox.tileLayer('gscplanning.2015-01_urban_bike'),
-      'Pedestrian': L.mapbox.tileLayer('gscplanning.2015-01_urban_ped')
+      'Bike': L.tileLayer('2015-01_urban_bike/{z}/{x}/{y}.png'),
+      'Pedestrian': L.tileLayer('2015-01_urban_ped/{z}/{x}/{y}.png')
     }).addTo(urban);
     
     // rural
@@ -129,8 +129,8 @@
     }).addTo(rural);
     
     L.control.layers({
-      'Bike': L.mapbox.tileLayer('gscplanning.2015-01_rural_bike'),
-      'Pedestrian': L.mapbox.tileLayer('gscplanning.2015-01_rural_ped')
+      'Bike': L.tileLayer('2015-01_rural_bike/{z}/{x}/{y}.png'),
+      'Pedestrian': L.tileLayer('2015-01_rural_ped/{z}/{x}/{y}.png')
     }).addTo(rural);
     
   </script>

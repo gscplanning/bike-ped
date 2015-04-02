@@ -1,0 +1,11 @@
+{
+    "attribution": "", 
+    "description": "", 
+    "center": "-84.5596,38.2109,13", 
+    "bounds": "-84.5972,38.1875,-84.5256,38.2393", 
+    "minzoom": "13", 
+    "version": "1.0.0", 
+    "template": "", 
+    "maxzoom": "16", 
+    "name": "2015-01_urban_ped"
+}
