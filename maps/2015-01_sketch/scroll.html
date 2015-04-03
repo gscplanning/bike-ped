@@ -15,23 +15,20 @@
 </head>
 <body>
 	<div class="main">
-		<!-- <section>
-			<div class="slide-container" id="main">
-				<div class="slide-content">
-					<h1>Bike-Ped 2015</h1>
-					<h2>Urban &amp; Rural Sketch Maps</h2>
-					<h3>12/14 &amp; 1/15</h3>
-					<img src="logo_med.png" id="logo"/>
-					<div id="advance-container">
-						<p><sup>Scroll</sup>  <span class="advance">&#8964;</span>  <sup>Down</sup></p>
-					</div>
-				</div>
-			</div>
-		</section> -->
 		<section class="home">
 			<div class="slide-container">
-				<h1>Bike/Ped Advisory Committee</h1>
-				<p>Urban &amp; Rural Sketch Maps</p>
+				<div class="slide-content">
+					<h1>Bike/Ped Advisory Committee</h1>
+					<h2>Urban &amp; Rural Sketch Maps</h2>
+					<hr>
+					<p class="block-text">During the December and January meetings of the Bike/Ped Advisory Committee, attendees were split into four groups to think about non-automotive transportation throughout Scott County. Urban-Ped and Urban-Bike focused on Georgetown, while Rural-Ped and Rural-Bike concentrated on Sadieville, Stamping Ground, and the rest of Scott County.</p>
+					<p class="block-text">Each group was given a large map of their assigned area and a box of markers. Members were encouraged to markup the map as a way of brainstorming the various observations and desires for their mode of transport in their assigned area.</p>
+					<p class="block-text">You can view the results* of this exercise by scrolling down.</p>
+
+					<p class="disclaimer-text">*Scroll-wheel zooming is disabled on the maps. Use the zoom buttons (+/-)  to zoom in. Alternatively, you can double-click to zoom in on a location or Shift + double-click to zoom out.</p>
+					<img src="logo_med.png" id="logo"/>
+
+				</div>
 			</div>
 		</section>
 		<section><div id="urban"></div></section>
@@ -58,7 +55,10 @@
 
 		L.control.layers({
 			'Bike': L.tileLayer('2015-01_urban_bike/{z}/{x}/{y}.png'),
-			'Pedestrian': L.tileLayer('2015-01_urban_ped/{z}/{x}/{y}.png')
+			'Pedestrian': L.tileLayer('2015-01_urban_ped/{z}/{x}/{y}.png')}, 
+			null,
+		{
+			collapsed: false
 		}).addTo(urban);
 	</script>
 
@@ -75,7 +75,10 @@
 
 		L.control.layers({
 			'Bike': L.tileLayer('2015-01_rural_bike/{z}/{x}/{y}.png'),
-			'Pedestrian': L.tileLayer('2015-01_rural_ped/{z}/{x}/{y}.png')
+			'Pedestrian': L.tileLayer('2015-01_rural_ped/{z}/{x}/{y}.png')}, 
+			null,
+		{
+			collapsed: false
 		}).addTo(rural);
 	</script>
 </body>
