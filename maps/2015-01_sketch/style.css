@@ -55,6 +55,11 @@ h1, h2, h3, h4, h5, h6 {
 	background:         linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* W3C */
 }
 
+.list-left {
+	text-align: left;
+	font-style: italic;
+}
+
 #logo {
 	margin-top: 20px;
 	height: 128px;
@@ -75,4 +80,11 @@ h1, h2, h3, h4, h5, h6 {
 	width: 100%;
 	height: 100%;
 	background-color: white;
+}
+.overlay {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	background-color: rgba(254,254,254,0.25);
+	z-index: 999;
 }

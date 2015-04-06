@@ -21,9 +21,16 @@
 					<h1>Bike/Ped Advisory Committee</h1>
 					<h2>Urban &amp; Rural Sketch Maps</h2>
 					<hr>
-					<p class="block-text">During the December and January meetings of the Bike/Ped Advisory Committee, attendees were split into four groups to think about non-automotive transportation throughout Scott County. Urban-Ped and Urban-Bike focused on Georgetown, while Rural-Ped and Rural-Bike concentrated on Sadieville, Stamping Ground, and the rest of Scott County.</p>
-					<p class="block-text">Each group was given a large map of their assigned area and a box of markers. Members were encouraged to markup the map as a way of brainstorming the various observations and desires for their mode of transport in their assigned area.</p>
-					<p class="block-text">You can view the results* of this exercise by scrolling down.</p>
+					<p class="block-text">During the December and January meetings of the Bike/Ped Advisory Committee, attendees were split into four sub-groups to help gather inventory and desired outcomes from the bike-ped plan. Urban-Ped and Urban-Bike focused on Georgetown, while Rural-Ped and Rural-Bike concentrated on Sadieville, Stamping Ground, and the rest of Scott County.</p>
+					<p class="block-text">Each group was given a large map of their assigned area a box of markers, and the following prompts: </p>
+
+					<ul class="list-left">
+						<li>What changes or improvements would you like to see in yoru respective sub-group area? Think in terms of goals/objectives.</li>
+						<li>What are some of the major commuting or transportation corridors for your user-type and geographic area?</li>
+						<li>Identify hot spots or road/sidewalk lengths of concern.</li>
+					</ul>
+
+					<p class="block-text">You can view the results* of this exercise by scrolling down. Use the layer selector in the top-right corner of each map to toggle the results from the bike and pedestrian sub-groups for each respective area.</p>
 
 					<p class="disclaimer-text">*Scroll-wheel zooming is disabled on the maps. Use the zoom buttons (+/-)  to zoom in. Alternatively, you can double-click to zoom in on a location or Shift + double-click to zoom out.</p>
 					<img src="logo_med.png" id="logo"/>
@@ -31,8 +38,14 @@
 				</div>
 			</div>
 		</section>
-		<section><div id="urban"></div></section>
-		<section><div id="rural"></div></section>
+		<section>
+			<div id="urban"></div>
+			<div class="overlay"><h1>Georgetown</h1></div>
+		</section>
+		<section>
+			<div id="rural"></div>
+			<div class="overlay"><h1>Scott County (incl. Sadieville &amp; Stamping Ground)</h1></div>
+		</section>
 	</div>
 
 	<!-- call onepage -->
@@ -43,15 +56,16 @@
 	<!-- Urban Map -->
 	<script type="text/javascript">
 		var urban = L.map('urban', {
-			scrollWheelZoom: false
+			scrollWheelZoom: false,
+			maxZoom: 16,
+			minZoom: 13,
+			zoomControl: false
 		}).setView([38.21,-84.56],14);
 		L.tileLayer('urban_base/{z}/{x}/{y}.png', {
-			attribution: 'GSCPC',
-			maxZoom: 16,
-			minZoom: 13
+			attribution: 'GSCPC'
 		}).addTo(urban);
 
-
+		new L.control.zoom({position: 'bottomleft'}).addTo(urban);
 
 		L.control.layers({
 			'Bike': L.tileLayer('2015-01_urban_bike/{z}/{x}/{y}.png'),
@@ -60,20 +74,24 @@
 		{
 			collapsed: false
 		}).addTo(urban);
+
 	</script>
 
 	<!-- Rural Map -->
 	<script type="text/javascript">
 		var rural = L.map('rural', {
-			scrollWheelZoom: false
+			scrollWheelZoom: false,
+			maxZoom: 13,
+			minZoom: 11,
+			zoomControl: false
 		}).setView([38.317236, -84.564147], 12);
 		L.tileLayer('rural_base/{z}/{x}/{y}.png', {
-			attribution: 'GSCPC',
-			maxZoom: 13,
-			minZoom: 11
+			attribution: 'GSCPC'
 		}).addTo(rural);
 
-		L.control.layers({
+		new L.control.zoom({position: 'bottomleft'}).addTo(rural);
+
+		L.control.layers({ 
 			'Bike': L.tileLayer('2015-01_rural_bike/{z}/{x}/{y}.png'),
 			'Pedestrian': L.tileLayer('2015-01_rural_ped/{z}/{x}/{y}.png')}, 
 			null,
